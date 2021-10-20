@@ -8,7 +8,13 @@ public class Mathey {
      * public static ...
      */
     // YOUR CODE HERE, METHOD HEADER ALSO REQUIRED
-
+    public static int max(int x, int y){
+        if (x>y){
+            return x;
+        }else{
+            return y;
+        }
+    }
 
 
 
@@ -16,7 +22,12 @@ public class Mathey {
      * Ex. max(1.2, 4.0) => 4.0
      */
     // YOUR CODE HERE, METHOD HEADER ALSO REQUIRED
-
+    public static double max(double x, double y){
+        if(x-y>0){
+            return x;
+        }else{return y;
+    }
+    }
 
 
 
@@ -24,7 +35,9 @@ public class Mathey {
      * Ex. max(1, 4, 2) => 4
      */
     // YOUR CODE HERE, METHOD HEADER ALSO REQUIRED
-
+    public static int max(int a, int b, int c){
+        return max(max(a,b), c);
+    }
 
 
 
@@ -32,7 +45,13 @@ public class Mathey {
      * Ex. max(1.0, 4.25, 1.3, 2.1) => 4.25
      */
     // YOUR CODE HERE, METHOD HEADER ALSO REQUIRED
-
+    public static double max(double a, double b, double c, double d){
+        if(max(a,b)-max(c,d)>0){
+            return max(a,b);
+        }else{
+            return max(c,d);
+        }
+    }
 
 
 
@@ -45,18 +64,13 @@ public class Mathey {
      *     randomInteger(1, 4) => 4
      */
     // YOUR CODE HERE, METHOD HEADER ALSO REQUIRED
+    public static int randomInteger(int a, int b){
+        return (int)(Math.random()*(1+b-a))+a;
+    }
 
-
-
-
-    /* Write a method that takes **one integer** and generates a random
-     * integer between 0 and the integer, inclusive
-     * you may assume that the integer is greater than 0
-     * Ex. randomInteger(5) => 3
-     *     randomInteger(5) => 5
-     *     randomInteger(5) => 0
-     */
-    // YOUR CODE HERE, METHOD HEADER ALSO REQUIRED
+    public static int randomInteger(int a){
+        return randomInteger(0,a);
+    }
 
 
 
@@ -73,7 +87,13 @@ public class Mathey {
      *     pow(3, 4) => 81
      */
     // YOUR CODE HERE, METHOD HEADER ALSO REQUIRED
-
+    public static int pow(int a, int b){
+        int c=1;
+        while(b>0){
+            c=c*a;
+            b=b-1;
+        }return c;
+    }
 
 
 
@@ -83,7 +103,12 @@ public class Mathey {
      *     abs(-2) => 2
      */
     // YOUR CODE HERE, METHOD HEADER ALSO REQUIRED
-
+public static int abs(int a){
+    if (a <= 0) {
+        a = a * -1;
+    }
+    return a;
+}
 
 
 
@@ -91,10 +116,18 @@ public class Mathey {
      * integer value that you get by rounding that double
      * You may assume that the integer is positive
      * Ex. round(2.4) => 2
-     *     round(2.5) => 2
+     *     round(2.5) => 3
      */
     // YOUR CODE HERE, METHOD HEADER ALSO REQUIRED
-
+public static int round(double a){
+    int x = (int)  a;
+    double check = a - x;
+    if(check>=0.5){
+        return x+1;
+    }else{
+        return x;
+    }
+}
 
 
 
@@ -108,7 +141,10 @@ public class Mathey {
      *     floor(2.999999999999) => 2
      */
     // YOUR CODE HERE, METHOD HEADER ALSO REQUIRED
-
+public static int floor(double a){
+    int x = (int) a;
+    return x;
+}
 
 
 
@@ -122,7 +158,15 @@ public class Mathey {
      *     ceil(3.01) => 4
      */
     // YOUR CODE HERE, METHOD HEADER ALSO REQUIRED
-
+public static int ceil(double a){
+    int x = (int)  a;
+    double check = a - x;
+    if(check>0){
+        return x+1;
+    }else{
+        return x;
+    }
+}
 
 
 
